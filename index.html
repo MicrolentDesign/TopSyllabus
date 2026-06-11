@@ -244,6 +244,19 @@ a{text-decoration:none}
 .faq-photo{border-radius:14px;overflow:hidden;height:520px}
 .faq-photo img{width:100%;height:100%;object-fit:cover}
 
+/* ── ABOUT US ── */
+.about{background:#F2F4F7}
+.about-inner{max-width:1100px;margin:0 auto}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.about-card{background:#fff;border-radius:20px;padding:32px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);transition:transform .3s ease,box-shadow .3s ease}
+.about-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.09)}
+.about-card-ico{width:52px;height:52px;border-radius:14px;background:rgba(0,136,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--blue);transition:background .3s ease,color .3s ease}
+.about-card:hover .about-card-ico{background:var(--blue);color:#fff}
+.about-card h3{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--dark);margin-bottom:10px;letter-spacing:-.2px}
+.about-card p{font-size:14.5px;color:var(--muted);line-height:1.65}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.about-grid{grid-template-columns:1fr}}
+
 /* ── FOOTER ── */
 footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%);color:#fff;padding:80px 80px 40px;border-radius:40px 40px 0 0}
 .ft-grid{display:grid;grid-template-columns:1fr 200px 200px;gap:80px;margin-bottom:52px;align-items:start}
@@ -509,6 +522,7 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
     <a href="#platform">Features</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
+    <a href="#about">About Us</a>
   </nav>
   <div class="hdr-btns">
     <a href="#contact" class="btn btn-ob">Contact Us</a>
@@ -528,6 +542,7 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
     <a href="#platform" class="mob-link">Features</a>
     <a href="#pricing" class="mob-link">Pricing</a>
     <a href="#faq" class="mob-link">FAQ</a>
+    <a href="#about" class="mob-link">About Us</a>
     <div class="mob-nav-ctas">
       <a href="#contact" class="btn btn-ob">Contact Us</a>
       <a href="#pricing" class="btn btn-oo">Get Started</a>
@@ -899,6 +914,40 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
       </div>
     </div>
     <div class="faq-photo"><img src="components/assets/b460a4cb5ddf3741.png" alt="Student preparing for exams"></div>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="sec about" id="about">
+  <div class="about-inner">
+    <div class="tc" style="margin-bottom:56px">
+      <span class="sec-badge">About Us</span>
+      <h2 class="sec-h">We're building the future of exam prep</h2>
+      <p class="sec-sub">A team of educators, engineers, and students — united by one belief: every learner deserves a smarter path to success.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-card-ico">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>To replace guesswork with AI-guided growth — giving every student a personalised, data-backed path to passing their exams with confidence.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-ico">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Our Story</h3>
+        <p>Born out of frustration with one-size-fits-all revision tools, TopSyllabus was founded to bring adaptive, intelligent learning to students across India and beyond.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-ico">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Our Team</h3>
+        <p>Educators from top universities, engineers passionate about EdTech, and student advisors who've sat the very exams we help prepare for.</p>
+      </div>
+    </div>
   </div>
 </section>
 
