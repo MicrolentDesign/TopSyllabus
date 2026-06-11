@@ -105,39 +105,44 @@ a{text-decoration:none}
 .how-hdr{margin-bottom:52px}
 .how-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
 
-/* base card — neutral until hover */
-.how-card{background:rgba(248,248,246,.85);border:1px solid var(--border);border-radius:24px;padding:28px 28px 30px;display:flex;flex-direction:column;gap:0;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease,background .35s ease,border-color .35s ease;opacity:0;transform:translateY(36px)}
+/* base card */
+.how-card{border-radius:24px;padding:28px 28px 30px;display:flex;flex-direction:column;gap:0;transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease;opacity:0;transform:translateY(36px)}
 .how-card.visible{opacity:1;transform:translateY(0)}
 .how-card:nth-child(2){transition-delay:.11s}
 .how-card:nth-child(3){transition-delay:.22s}
 .how-card:hover{transform:translateY(-10px)!important}
 
-/* colour fires only on hover */
-.how-card--blue:hover{background:linear-gradient(148deg,#C9DEFF 0%,#DDE9FF 45%,#F2F7FF 100%);border-color:#A8C8F8;box-shadow:0 20px 56px rgba(0,136,255,.18),0 6px 14px rgba(0,0,0,.06)}
-.how-card--amber:hover{background:linear-gradient(148deg,#FFE29A 0%,#FAEFC4 45%,#FFFBEF 100%);border-color:#F0CF7A;box-shadow:0 20px 56px rgba(244,124,32,.18),0 6px 14px rgba(0,0,0,.06)}
-.how-card--teal:hover{background:linear-gradient(148deg,#A8EDD0 0%,#C8F3E3 45%,#EDFAF4 100%);border-color:#6DCCAA;box-shadow:0 20px 56px rgba(16,185,129,.18),0 6px 14px rgba(0,0,0,.06)}
+/* colour themes — always on by default */
+.how-card--blue{background:linear-gradient(148deg,#C9DEFF 0%,#DDE9FF 45%,#F2F7FF 100%);border:1px solid #A8C8F8;box-shadow:0 6px 28px rgba(0,136,255,.1),0 2px 6px rgba(0,0,0,.04)}
+.how-card--amber{background:linear-gradient(148deg,#FFE29A 0%,#FAEFC4 45%,#FFFBEF 100%);border:1px solid #F0CF7A;box-shadow:0 6px 28px rgba(244,124,32,.1),0 2px 6px rgba(0,0,0,.04)}
+.how-card--teal{background:linear-gradient(148deg,#A8EDD0 0%,#C8F3E3 45%,#EDFAF4 100%);border:1px solid #6DCCAA;box-shadow:0 6px 28px rgba(16,185,129,.1),0 2px 6px rgba(0,0,0,.04)}
+
+/* hover — intensify shadow only */
+.how-card--blue:hover{box-shadow:0 20px 56px rgba(0,136,255,.2),0 6px 14px rgba(0,0,0,.06)}
+.how-card--amber:hover{box-shadow:0 20px 56px rgba(244,124,32,.2),0 6px 14px rgba(0,0,0,.06)}
+.how-card--teal:hover{box-shadow:0 20px 56px rgba(16,185,129,.2),0 6px 14px rgba(0,0,0,.06)}
 
 /* icon illustration */
 .how-card-ico{width:140px;height:140px;margin-bottom:16px;flex-shrink:0;transition:transform .32s ease;align-self:flex-start;margin-left:-6px}
 .how-card:hover .how-card-ico{transform:scale(1.07) translateY(-3px)}
 .how-card-ico img{width:100%;height:100%;object-fit:contain;object-position:left center}
 
-/* step badge */
-.how-step-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;align-self:flex-start;background:none!important;padding:0;color:var(--muted);transition:color .3s ease}
-.how-card--blue:hover .how-step-badge{color:var(--blue)}
-.how-card--amber:hover .how-step-badge{color:#b45309}
-.how-card--teal:hover .how-step-badge{color:#047857}
+/* step badge — coloured by default */
+.how-step-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;align-self:flex-start;background:none!important;padding:0}
+.how-card--blue .how-step-badge{color:var(--blue)}
+.how-card--amber .how-step-badge{color:#b45309}
+.how-card--teal .how-step-badge{color:#047857}
 
 /* card heading */
 .how-card h3{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--dark);margin-bottom:14px;line-height:1.35;letter-spacing:-.25px}
 
-/* bullet list */
+/* bullet list — coloured markers by default */
 .how-card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .how-card ul li{font-size:13.5px;color:rgb(50,60,72);line-height:1.58;display:flex;gap:10px;align-items:flex-start}
-.how-card ul li::before{content:'';width:7px;height:7px;border-radius:2.5px;flex-shrink:0;margin-top:6px;background:var(--muted);transition:background .3s ease}
-.how-card--blue:hover ul li::before{background:var(--blue)}
-.how-card--amber:hover ul li::before{background:#d97706}
-.how-card--teal:hover ul li::before{background:#059669}
+.how-card ul li::before{content:'';width:7px;height:7px;border-radius:2.5px;flex-shrink:0;margin-top:6px}
+.how-card--blue ul li::before{background:var(--blue)}
+.how-card--amber ul li::before{background:#d97706}
+.how-card--teal ul li::before{background:#059669}
 
 /* ── PLATFORM FEATURES ── */
 .platform{background:#fff;overflow:hidden;position:relative;padding:100px 80px}
@@ -673,6 +678,62 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-hdr tc">
+    <h2 class="sec-h">How it works</h2>
+    <p class="sec-sub">Three focused steps. One outcome that matters: you pass.</p>
+  </div>
+  <div class="how-row">
+
+    <!-- Card 1 -->
+    <div class="how-card how-card--blue">
+      <div class="how-card-ico">
+        <img src="assets/how-icon-profile.png" alt="AI Study Profile" loading="lazy" decoding="async">
+      </div>
+      <span class="how-step-badge">Step 01</span>
+      <h3>Build Your AI Study Profile</h3>
+      <ul>
+        <li>Select your exam board and subject set in under two minutes</li>
+        <li>AI maps existing knowledge gaps from your very first session</li>
+        <li>Q-Pilot continuously adapts difficulty, pacing and topic focus</li>
+        <li>Every question calibrated — no generic, off-syllabus content</li>
+      </ul>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="how-card how-card--amber">
+      <div class="how-card-ico">
+        <img src="assets/how-icon-practice.png" alt="AI Practice" loading="lazy" decoding="async">
+      </div>
+      <span class="how-step-badge">Step 02</span>
+      <h3>Practice Smarter, Not Harder</h3>
+      <ul>
+        <li>Exam-board aligned questions — zero off-syllabus distractions</li>
+        <li>Sessions escalate where you're strong, slow where you're not</li>
+        <li>Instant rationale for every answer, not just a score</li>
+        <li>Spaced repetition locks concepts into long-term memory</li>
+      </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="how-card how-card--teal">
+      <div class="how-card-ico">
+        <img src="assets/how-icon-progress.png" alt="Track Progress" loading="lazy" decoding="async">
+      </div>
+      <span class="how-step-badge">Step 03</span>
+      <h3>Track Readiness in Real Time</h3>
+      <ul>
+        <li>Live readiness score per subject — know exactly where you stand</li>
+        <li>Dashboards surface weak spots before they cost marks</li>
+        <li>Weekly progress reports delivered automatically</li>
+        <li>Predictive pass probability updated after every session</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <!-- PLATFORM FEATURES -->
 <section class="platform" id="platform">
   <div class="plat-ring"></div>
@@ -755,62 +816,6 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
       </ul>
       <button class="pbo">Contact Sales</button>
     </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="how-hdr tc">
-    <h2 class="sec-h">How it works</h2>
-    <p class="sec-sub">Three focused steps. One outcome that matters: you pass.</p>
-  </div>
-  <div class="how-row">
-
-    <!-- Card 1 -->
-    <div class="how-card how-card--blue">
-      <div class="how-card-ico">
-        <img src="assets/how-icon-profile.png" alt="AI Study Profile" loading="lazy" decoding="async">
-      </div>
-      <span class="how-step-badge">Step 01</span>
-      <h3>Build Your AI Study Profile</h3>
-      <ul>
-        <li>Select your exam board and subject set in under two minutes</li>
-        <li>AI maps existing knowledge gaps from your very first session</li>
-        <li>Q-Pilot continuously adapts difficulty, pacing and topic focus</li>
-        <li>Every question calibrated — no generic, off-syllabus content</li>
-      </ul>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="how-card how-card--amber">
-      <div class="how-card-ico">
-        <img src="assets/how-icon-practice.png" alt="AI Practice" loading="lazy" decoding="async">
-      </div>
-      <span class="how-step-badge">Step 02</span>
-      <h3>Practice Smarter, Not Harder</h3>
-      <ul>
-        <li>Exam-board aligned questions — zero off-syllabus distractions</li>
-        <li>Sessions escalate where you're strong, slow where you're not</li>
-        <li>Instant rationale for every answer, not just a score</li>
-        <li>Spaced repetition locks concepts into long-term memory</li>
-      </ul>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="how-card how-card--teal">
-      <div class="how-card-ico">
-        <img src="assets/how-icon-progress.png" alt="Track Progress" loading="lazy" decoding="async">
-      </div>
-      <span class="how-step-badge">Step 03</span>
-      <h3>Track Readiness in Real Time</h3>
-      <ul>
-        <li>Live readiness score per subject — know exactly where you stand</li>
-        <li>Dashboards surface weak spots before they cost marks</li>
-        <li>Weekly progress reports delivered automatically</li>
-        <li>Predictive pass probability updated after every session</li>
-      </ul>
-    </div>
-
   </div>
 </section>
 
