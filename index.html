@@ -44,7 +44,7 @@ a{text-decoration:none}
 /* ── HERO ── */
 .hero{position:relative;height:calc(100vh - 90px);min-height:520px;display:flex;align-items:center;overflow:hidden}
 .hero-photo{position:absolute;top:0;right:0;width:70%;height:100%;background:url('components/assets/fcfb090e9a3b5174.png') center/cover no-repeat;transform:scaleX(-1);overflow:hidden}
-.hero-photo iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none}
+
 .hero-veil{position:absolute;top:0;left:0;width:62%;height:100%;background:linear-gradient(90deg,#fff 56%,transparent);pointer-events:none}
 .hero-glo{position:absolute;top:-120px;left:-160px;width:500px;height:500px;border-radius:50%;background:radial-gradient(rgba(250,130,25,.22),transparent 65%);pointer-events:none}
 .hero-glb{position:absolute;bottom:-100px;right:0;width:580px;height:580px;border-radius:50%;background:radial-gradient(rgba(0,136,255,.55),transparent 60%);pointer-events:none}
@@ -168,6 +168,49 @@ a{text-decoration:none}
 .how-card--amber ul li::before{background:#d97706}
 .how-card--teal ul li::before{background:#059669}
 
+/* ── VIDEO SHOWCASE ── */
+.vid-show{background:#fff;padding:100px 80px;position:relative;overflow:hidden}
+.vid-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.vid-orb{position:absolute;border-radius:50%;filter:blur(72px)}
+.vid-orb-1{width:360px;height:360px;background:radial-gradient(circle,rgba(0,136,255,.1) 0%,transparent 70%);top:-60px;right:8%;animation:hfloat-a 22s ease-in-out infinite 1s}
+.vid-orb-2{width:280px;height:280px;background:radial-gradient(circle,rgba(244,124,32,.09) 0%,transparent 70%);bottom:-40px;left:4%;animation:hfloat-b 26s ease-in-out infinite}
+.vid-ring-v{position:absolute;border-radius:50%;border:2px solid transparent}
+.vid-ring-v1{width:70px;height:70px;border-color:rgba(0,136,255,.15);bottom:25%;left:12%;animation:hfloat-c 18s ease-in-out infinite 2s}
+.vid-ring-v2{width:40px;height:40px;border-color:rgba(16,185,129,.18);top:22%;left:7%;animation:hfloat-a 20s ease-in-out infinite}
+.vid-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;max-width:1200px;margin:0 auto}
+.vid-text h2{font-family:'Inter',sans-serif;font-size:44px;font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-1px;margin-bottom:18px}
+.vid-text p{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:32px;max-width:460px}
+.vid-browser{background:#f1f3f6;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.14),0 4px 16px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.06)}
+.vid-browser-bar{background:#e8eaed;padding:10px 14px;display:flex;align-items:center;gap:8px}
+.vid-browser-dots{display:flex;gap:6px}
+.vid-browser-dots span{width:11px;height:11px;border-radius:50%}
+.vid-browser-dots span:nth-child(1){background:#ff5f57}
+.vid-browser-dots span:nth-child(2){background:#ffbd2e}
+.vid-browser-dots span:nth-child(3){background:#28c840}
+.vid-browser-url{flex:1;background:#fff;border-radius:5px;padding:4px 10px;font-size:11px;color:#999;margin:0 10px;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vid-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.vid-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block}
+
+/* ── DOODLES ── */
+.doodle{position:absolute;pointer-events:none;z-index:0}
+.doodle-plane-a{top:16%;left:5%;opacity:.16;animation:hfloat-a 18s ease-in-out infinite 2s}
+.doodle-plane-b{bottom:18%;right:7%;opacity:.13;animation:hfloat-b 23s ease-in-out infinite 0.5s}
+.doodle-flower-a{top:62%;right:5%;opacity:.14;animation:hfloat-c 21s ease-in-out infinite 3s}
+.doodle-flower-b{top:8%;right:28%;opacity:.11;animation:hfloat-a 25s ease-in-out infinite 1s}
+.doodle-star-a{bottom:14%;left:32%;opacity:.13;animation:hfloat-b 17s ease-in-out infinite 0.8s}
+.doodle-star-b{top:38%;left:2%;opacity:.11;animation:hspin 32s linear infinite}
+
+/* ── PRICING TOGGLE ── */
+.price-toggle-wrap{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px 0 0;flex-wrap:wrap;position:relative;z-index:1}
+.ptg-label{font-size:15px;font-weight:600;color:rgba(255,255,255,.8)}
+.ptg-switch{width:52px;height:28px;background:rgba(255,255,255,.2);border-radius:14px;position:relative;cursor:pointer;transition:background .2s;border:2px solid rgba(255,255,255,.35);flex-shrink:0}
+.ptg-switch.yearly{background:rgba(255,255,255,.85)}
+.ptg-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#1B3D8B;transition:transform .22s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.ptg-switch.yearly .ptg-knob{transform:translateX(24px);background:var(--blue)}
+.ptg-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:5px 14px;font-size:11.5px;color:rgba(255,255,255,.9);font-weight:600;white-space:nowrap;letter-spacing:.02em}
+.p-curr{display:block;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.06em;margin-bottom:2px}
+.p-billing-note{font-size:12px;color:var(--muted);margin:-18px 0 20px;min-height:16px;line-height:1.4}
+
 /* ── PLATFORM FEATURES ── */
 .platform{background:#fff;overflow:hidden;position:relative;padding:100px 80px}
 .plat-ring{position:absolute;top:-60px;left:-80px;width:197px;height:197px;border-radius:50%;box-shadow:inset 0 0 0 30px rgb(255,238,198);pointer-events:none}
@@ -200,7 +243,7 @@ a{text-decoration:none}
 .p-badge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;border-radius:12px;padding:7px 24px;font-size:14px;font-weight:700;white-space:nowrap}
 .p-ico-sq{width:60px;height:60px;border-radius:16px;background:rgba(248,248,246,.9);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0}
 .p-ico-sq svg{width:24px;height:24px;fill:var(--orange-fig)}
-.p-name{font-size:22px;font-weight:500;color:var(--orange-fig);letter-spacing:-.003em;margin-bottom:6px}
+.p-name{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
 .p-price{font-family:'Inter',sans-serif;font-size:48px;font-weight:700;color:var(--text);letter-spacing:-1px;line-height:1;margin-bottom:24px}
 .p-price .mo{font-size:18px;font-weight:400;letter-spacing:0;color:rgb(100,116,139)}
 .p-feats{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:28px;flex:1}
@@ -237,14 +280,14 @@ a{text-decoration:none}
 .fg input,.fg textarea{width:100%;padding:16px;border-radius:10px;border:none;box-shadow:inset 0 0 0 1px var(--border),0px 1px 2px rgba(16,24,40,.05);background:#fff;font-size:16px;font-family:'Manrope',sans-serif;color:var(--dark);outline:none;transition:box-shadow .2s}
 .fg input:focus,.fg textarea:focus{box-shadow:inset 0 0 0 1px var(--blue),0 0 0 3px rgba(0,136,255,.1)}
 .fg textarea{resize:vertical;min-height:100px}
-.phone-row{display:flex;gap:0;box-shadow:inset 0 0 0 1px var(--border),0px 1px 2px rgba(16,24,40,.05);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .2s}
+.phone-row{display:flex;gap:0;box-shadow:inset 0 0 0 1px #e2e8f0,0px 1px 2px rgba(16,24,40,.05);border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .2s;min-height:54px;align-items:stretch}
 .fg input[type="email"]{-webkit-appearance:none;appearance:none}
 .fg input::-webkit-contacts-auto-fill-button,
 .fg input::-webkit-credentials-auto-fill-button{display:none!important;visibility:hidden;pointer-events:none;position:absolute;right:0}
 .phone-row:focus-within{box-shadow:inset 0 0 0 1px var(--blue),0 0 0 3px rgba(0,136,255,.1)}
-.cc-select{display:flex;align-items:center;gap:6px;padding:0 12px;border:none;border-right:1px solid var(--border);background:#fff;font-family:'Manrope',sans-serif;font-size:15px;color:var(--dark);cursor:pointer;min-width:90px;outline:none;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
+.cc-select{padding:0 28px 0 12px;border:none;border-right:1.5px solid #e2e8f0;background:#fff;font-family:'Manrope',sans-serif;font-size:15px;color:var(--dark);cursor:pointer;min-width:96px;outline:none;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;box-sizing:border-box;align-self:stretch;height:auto;flex-shrink:0}
 .cc-flag{font-size:18px}
-.phone-input{flex:1;padding:16px 14px;border:none;background:transparent;font-size:16px;font-family:'Manrope',sans-serif;color:var(--dark);outline:none}
+.phone-input{flex:1;padding:0 14px;border:none;background:transparent;font-size:16px;font-family:'Manrope',sans-serif;color:var(--dark);outline:none;min-height:54px;box-sizing:border-box}
 .btn-sub{width:100%;padding:16px;border-radius:20px;background:#0E78E9;color:#fff;border:none;font-size:16px;font-weight:600;cursor:pointer;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;margin-top:8px;letter-spacing:.04em;text-transform:uppercase}
 .btn-sub:hover{background:#0a65c8}
 
@@ -342,6 +385,7 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
   .hdr{padding:0 48px}
   .hero-inner{padding:0 48px}
   .sec,.how,.platform,.pricing,.testi,.faq{padding-left:48px;padding-right:48px}
+  .vid-show{padding-left:48px;padding-right:48px}
   .stats-band{padding-left:48px;padding-right:48px}
   .feat-grid{grid-template-columns:1fr 1fr 1fr;gap:20px}
   .plat-r1{grid-template-columns:repeat(2,1fr)}
@@ -395,6 +439,12 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
   .fc-ico img,.fc-ico-svg{width:32px;height:32px}
   .fc h3{font-size:20px}
   .fc p{font-size:14px}
+
+  /* Video showcase — tablet */
+  .vid-show{padding:64px 24px}
+  .vid-inner{grid-template-columns:1fr;gap:36px}
+  .vid-text h2{font-size:32px}
+  .vid-text p{font-size:15px;max-width:100%}
 
   /* How it works — tablet */
   .how-row{grid-template-columns:repeat(3,1fr);gap:18px}
@@ -484,6 +534,10 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
   .fc-ico img,.fc-ico-svg{width:28px;height:28px}
   .fc h3{font-size:18px;margin-bottom:8px}
   .fc p{font-size:13px}
+
+  /* Video showcase — mobile */
+  .vid-show{padding:52px 16px}
+  .vid-text h2{font-size:26px}
 
   /* How it works — mobile */
   .how{padding:60px 20px}
@@ -590,9 +644,7 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-photo">
-    <iframe src="https://www.youtube-nocookie.com/embed/RDeTdXMOXmI?autoplay=1&mute=1&loop=1&playlist=RDeTdXMOXmI&controls=0&rel=0&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen title="Hero background video"></iframe>
-  </div>
+  <div class="hero-photo"></div>
   <div class="hero-veil"></div>
   <div class="hero-glo"></div>
   <div class="hero-glb"></div>
@@ -716,6 +768,44 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
   </div>
 </section>
 
+<!-- VIDEO SHOWCASE -->
+<section class="vid-show" id="demo">
+  <div class="vid-bg" aria-hidden="true">
+    <div class="vid-orb vid-orb-1"></div>
+    <div class="vid-orb vid-orb-2"></div>
+    <div class="vid-ring-v vid-ring-v1"></div>
+    <div class="vid-ring-v vid-ring-v2"></div>
+    <div class="doodle doodle-plane-a">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </div>
+    <div class="doodle doodle-flower-b">
+      <svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="#F47C20" stroke-width="1.6"><circle cx="20" cy="20" r="3.5"/><ellipse cx="20" cy="10" rx="4" ry="6"/><ellipse cx="20" cy="30" rx="4" ry="6"/><ellipse cx="10" cy="20" rx="6" ry="4"/><ellipse cx="30" cy="20" rx="6" ry="4"/><ellipse cx="12.9" cy="12.9" rx="4" ry="6" transform="rotate(45 12.9 12.9)"/><ellipse cx="27.1" cy="27.1" rx="4" ry="6" transform="rotate(45 27.1 27.1)"/><ellipse cx="27.1" cy="12.9" rx="4" ry="6" transform="rotate(-45 27.1 12.9)"/><ellipse cx="12.9" cy="27.1" rx="4" ry="6" transform="rotate(-45 12.9 27.1)"/></svg>
+    </div>
+    <div class="doodle doodle-star-b" style="top:55%;right:3%">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
+    </div>
+  </div>
+  <div class="vid-inner">
+    <div class="vid-text">
+      <span class="sec-badge">See It In Action</span>
+      <h2>Watch TopSyllabus<br>transform your prep</h2>
+      <p>See how our AI-powered Q-Pilot builds your personalised study profile, adapts to your pace, and delivers a real-time readiness score — all in one seamless platform.</p>
+      <a href="#how" class="btn btn-sb" style="display:inline-flex">Explore How It Works</a>
+    </div>
+    <div>
+      <div class="vid-browser">
+        <div class="vid-browser-bar">
+          <div class="vid-browser-dots"><span></span><span></span><span></span></div>
+          <div class="vid-browser-url">topsyllabus.ai/demo</div>
+        </div>
+        <div class="vid-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/RDeTdXMOXmI?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="TopSyllabus product demo"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
   <!-- decorative animated background -->
@@ -730,6 +820,15 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
     <div class="how-dot how-dot-1"></div>
     <div class="how-dot how-dot-2"></div>
     <div class="how-dot how-dot-3"></div>
+    <div class="doodle doodle-plane-b">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </div>
+    <div class="doodle doodle-flower-a">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none" stroke="#F47C20" stroke-width="1.6"><circle cx="20" cy="20" r="3.5"/><ellipse cx="20" cy="10" rx="4" ry="6"/><ellipse cx="20" cy="30" rx="4" ry="6"/><ellipse cx="10" cy="20" rx="6" ry="4"/><ellipse cx="30" cy="20" rx="6" ry="4"/><ellipse cx="12.9" cy="12.9" rx="4" ry="6" transform="rotate(45 12.9 12.9)"/><ellipse cx="27.1" cy="27.1" rx="4" ry="6" transform="rotate(45 27.1 27.1)"/><ellipse cx="27.1" cy="12.9" rx="4" ry="6" transform="rotate(-45 27.1 12.9)"/><ellipse cx="12.9" cy="27.1" rx="4" ry="6" transform="rotate(-45 12.9 27.1)"/></svg>
+    </div>
+    <div class="doodle doodle-star-a">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
+    </div>
   </div>
   <div class="how-hdr tc">
     <h2 class="sec-h">How it works</h2>
@@ -812,58 +911,58 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
   <img class="pricing-topo2" src="assets/pricing-bg2.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
   <div class="tc" style="position:relative;z-index:1">
     <span class="sec-badge">Pricing</span>
-    <h2 class="sec-h">Invest in your future</h2>
-    <p class="sec-sub">All Plans Start With A Free Trial. No Credit Card Required To Begin.</p>
+    <h2 class="sec-h">Invest in your <em style="font-style:italic">future</em></h2>
+    <p class="sec-sub" style="margin-top:16px">Choose the perfect plan for your learning needs</p>
+  </div>
+  <div class="price-toggle-wrap">
+    <span class="ptg-label">Monthly</span>
+    <div class="ptg-switch yearly" id="billingToggle" role="switch" aria-checked="true" tabindex="0">
+      <div class="ptg-knob"></div>
+    </div>
+    <span class="ptg-label">Yearly</span>
+    <span class="ptg-badge">Early Launch Offer &bull; Save 30% Until May 31</span>
   </div>
   <div class="price-row" style="position:relative;z-index:1">
     <!-- ESSENTIAL -->
     <div class="plan">
-      <div class="p-ico-sq">
-        <svg viewBox="0 0 16 16"><path d="M8 0C9.061 0 10.078.421 10.828 1.172 11.579 1.922 12 2.939 12 4c0 1.061-.421 2.078-1.172 2.828C10.078 7.579 9.061 8 8 8c-1.061 0-2.078-.421-2.828-1.172C4.421 6.078 4 5.061 4 4c0-1.061.421-2.078 1.172-2.828C5.922.421 6.939 0 8 0zm0 10c4.42 0 8 1.79 8 4v2H0v-2c0-2.21 3.58-4 8-4z" fill-rule="nonzero"/></svg>
-      </div>
       <div class="p-name">Essential</div>
-      <div class="p-price">499 <span class="mo">/ mo</span></div>
+      <div class="p-price"><span class="p-curr">INR</span><span class="p-amt" data-monthly="599" data-yearly="419">419</span><span class="mo"> / mo</span></div>
+      <p class="p-billing-note p-billing-essential">Billed as INR 5,028/year</p>
       <ul class="p-feats">
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>20 questions per day</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>1 exam category</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Basic progress tracking</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Community access</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>AI-generated chapter-wise questions – CBSE</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Max of 20 practice questions per day</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>15 to 20 min structured daily practice sessions</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Student &amp; parent dashboards</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Web-based access</li>
       </ul>
       <button class="pbo">Start Free</button>
     </div>
     <!-- PRO -->
     <div class="plan feat">
       <div class="p-badge">Most Popular</div>
-      <div class="p-ico-sq">
-        <svg viewBox="0 0 22 18"><path d="M5 18l-3-14 7 4 3-8 3 8 7-4-3 14H5z" fill-rule="nonzero"/></svg>
-      </div>
       <div class="p-name">Pro</div>
-      <div class="p-price">699 <span class="mo">/ mo</span></div>
+      <div class="p-price"><span class="p-curr">INR</span><span class="p-amt" data-monthly="799" data-yearly="559">559</span><span class="mo"> / mo</span></div>
+      <p class="p-billing-note p-billing-pro">Billed as INR 6,708/year</p>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.5">Everything you need to pass your exam.</p>
       <ul class="p-feats">
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Unlimited questions</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>All 180+ exam categories</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Full mock exams &amp; simulations</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>AI adaptive study plan</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Everything in Essential</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Unlimited practice questions</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Advanced analytics — performance by subject, chapter &amp; difficulty</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Early access to new features</li>
         <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Predictive readiness score</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Flashcards &amp; smart notes</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Priority support</li>
       </ul>
-      <button class="pbf">Start Pro</button>
+      <button class="pbf">Get Pro &rarr;</button>
     </div>
-    <!-- ENTERPRISE -->
+    <!-- INSTITUTIONS -->
     <div class="plan">
-      <div class="p-ico-sq">
-        <svg viewBox="0 0 22 18"><path d="M20 16h2v2H0v-2h2V1C2 .45 2.45 0 3 0h10c.55 0 1 .45 1 1v15h2V6h3a1 1 0 011 1v9zM6 8v2h4V8H6zm0-4v2h4V4H6z" fill-rule="nonzero"/></svg>
-      </div>
-      <div class="p-name">Enterprise</div>
-      <div class="p-price" style="font-size:42px;letter-spacing:-.5px">Custom</div>
+      <div class="p-name">Institutions</div>
+      <div class="p-price" style="font-size:40px;letter-spacing:-.5px;margin-bottom:8px">Enterprise</div>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.5">For schools and coaching centres.</p>
       <ul class="p-feats">
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Everything in Pro</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Admin dashboard</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Custom syllabus schedule</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Dedicated support calendar</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>LMS integration</li>
-        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>API access</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Everything in Pro, for your entire school</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>School-wide performance analytics &amp; admin dashboard</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Structured onboarding with dedicated Innopas support</li>
+        <li><span class="pck"><svg viewBox="0 0 13 10"><polyline points="1 5 4.5 8.5 12 1"/></svg></span>Custom syllabus &amp; institutional reporting on request</li>
       </ul>
       <button class="pbo">Contact Sales</button>
     </div>
@@ -883,6 +982,15 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
     <div class="about-dot about-dot-1"></div>
     <div class="about-dot about-dot-2"></div>
     <div class="about-dot about-dot-3"></div>
+    <div class="doodle doodle-plane-a">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </div>
+    <div class="doodle doodle-flower-a">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none" stroke="#0088FF" stroke-width="1.6"><circle cx="20" cy="20" r="3.5"/><ellipse cx="20" cy="10" rx="4" ry="6"/><ellipse cx="20" cy="30" rx="4" ry="6"/><ellipse cx="10" cy="20" rx="6" ry="4"/><ellipse cx="30" cy="20" rx="6" ry="4"/><ellipse cx="12.9" cy="12.9" rx="4" ry="6" transform="rotate(45 12.9 12.9)"/><ellipse cx="27.1" cy="27.1" rx="4" ry="6" transform="rotate(45 27.1 27.1)"/><ellipse cx="27.1" cy="12.9" rx="4" ry="6" transform="rotate(-45 27.1 12.9)"/><ellipse cx="12.9" cy="27.1" rx="4" ry="6" transform="rotate(-45 12.9 27.1)"/></svg>
+    </div>
+    <div class="doodle doodle-star-a" style="bottom:20%;right:28%">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
+    </div>
   </div>
   <div class="about-inner">
     <div class="tc" style="margin-bottom:56px">
@@ -1103,6 +1211,24 @@ document.querySelectorAll('.fi-q').forEach(btn=>{
     if(!isOpen) item.classList.add('open');
   });
 });
+
+// Pricing billing toggle
+const billingToggle = document.getElementById('billingToggle');
+let isYearly = true;
+function updatePricing() {
+  document.querySelectorAll('.p-amt').forEach(el => {
+    el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly;
+  });
+  document.querySelectorAll('.p-billing-essential,.p-billing-pro').forEach(el => {
+    el.style.visibility = isYearly ? 'visible' : 'hidden';
+  });
+  billingToggle.classList.toggle('yearly', isYearly);
+  billingToggle.setAttribute('aria-checked', isYearly ? 'true' : 'false');
+}
+if (billingToggle) {
+  billingToggle.addEventListener('click', () => { isYearly = !isYearly; updatePricing(); });
+  billingToggle.addEventListener('keydown', e => { if(e.key===' '||e.key==='Enter'){e.preventDefault();isYearly=!isYearly;updatePricing();} });
+}
 
 // Sticky header shadow
 window.addEventListener('scroll',()=>{
