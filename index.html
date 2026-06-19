@@ -177,17 +177,12 @@ a{text-decoration:none}
 .vid-ring-v{position:absolute;border-radius:50%;border:2px solid transparent}
 .vid-ring-v1{width:70px;height:70px;border-color:rgba(0,136,255,.15);bottom:25%;left:12%;animation:hfloat-c 18s ease-in-out infinite 2s}
 .vid-ring-v2{width:40px;height:40px;border-color:rgba(16,185,129,.18);top:22%;left:7%;animation:hfloat-a 20s ease-in-out infinite}
-.vid-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;max-width:1200px;margin:0 auto}
+.vid-inner{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center;position:relative;z-index:1;max-width:1280px;margin:0 auto}
 .vid-text h2{font-family:'Inter',sans-serif;font-size:44px;font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-1px;margin-bottom:18px}
 .vid-text p{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:32px;max-width:460px}
-.vid-browser{background:#f1f3f6;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.14),0 4px 16px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.06)}
-.vid-browser-bar{background:#e8eaed;padding:10px 14px;display:flex;align-items:center;gap:8px}
-.vid-browser-dots{display:flex;gap:6px}
-.vid-browser-dots span{width:11px;height:11px;border-radius:50%}
-.vid-browser-dots span:nth-child(1){background:#ff5f57}
-.vid-browser-dots span:nth-child(2){background:#ffbd2e}
-.vid-browser-dots span:nth-child(3){background:#28c840}
-.vid-browser-url{flex:1;background:#fff;border-radius:5px;padding:4px 10px;font-size:11px;color:#999;margin:0 10px;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vid-frame-outer{position:relative}
+.vid-halo{position:absolute;inset:-48px;background:radial-gradient(ellipse at 55% 50%,rgba(0,136,255,.22) 0%,rgba(244,124,32,.12) 45%,transparent 72%);filter:blur(36px);border-radius:48px;z-index:0;pointer-events:none}
+.vid-browser{border-radius:16px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,.18),0 6px 20px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.06);position:relative;z-index:1}
 .vid-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
 .vid-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block}
 
@@ -792,14 +787,11 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
       <p>See how our AI-powered Q-Pilot builds your personalised study profile, adapts to your pace, and delivers a real-time readiness score — all in one seamless platform.</p>
       <a href="#how" class="btn btn-sb" style="display:inline-flex">Explore How It Works</a>
     </div>
-    <div>
+    <div class="vid-frame-outer">
+      <div class="vid-halo"></div>
       <div class="vid-browser">
-        <div class="vid-browser-bar">
-          <div class="vid-browser-dots"><span></span><span></span><span></span></div>
-          <div class="vid-browser-url">topsyllabus.ai/demo</div>
-        </div>
         <div class="vid-embed">
-          <iframe src="https://www.youtube-nocookie.com/embed/RDeTdXMOXmI?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="TopSyllabus product demo"></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/RDeTdXMOXmI?autoplay=1&mute=1&loop=1&playlist=RDeTdXMOXmI&controls=1&rel=0&modestbranding=1" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="TopSyllabus product demo"></iframe>
         </div>
       </div>
     </div>
