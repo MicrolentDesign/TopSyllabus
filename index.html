@@ -28,7 +28,7 @@ a{text-decoration:none}
 .hdr-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .hdr-logo img{height:44px;width:auto;object-fit:contain}
 .hdr-nav{display:flex;gap:36px}
-.hdr-nav a{font-size:16px;font-weight:700;color:var(--text);transition:color .2s}
+.hdr-nav a{font-size:14px;font-weight:400;color:var(--text);transition:color .2s}
 .hdr-nav a:hover{color:var(--blue)}
 .hdr-btns{display:flex;gap:12px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Manrope',sans-serif;font-weight:700;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
@@ -356,6 +356,12 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
 .socb svg{width:18px;height:18px;fill:#000}
 .socb.ld svg{fill:none;stroke:#000;stroke-width:1.5}
 .socb.ig svg{fill:none;stroke:#000;stroke-width:1.5}
+
+/* ── SCROLL TO TOP ── */
+.stt{position:fixed;bottom:clamp(20px,4vw,36px);right:clamp(20px,4vw,36px);z-index:500;width:clamp(40px,5vw,52px);height:clamp(40px,5vw,52px);border-radius:50%;background:#fff;border:1.5px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.1);color:var(--dark);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px) scale(0.88);pointer-events:none;transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1),background .2s,border-color .2s,box-shadow .2s}
+.stt svg{width:clamp(16px,2.2vw,20px);height:clamp(16px,2.2vw,20px);transition:stroke .2s}
+.stt:hover{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 6px 24px rgba(0,136,255,.28)}
+.stt.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
 
 /* ── HAMBURGER MENU ── */
 .hdr-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:200}
@@ -1155,6 +1161,10 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
   </div>
 </footer>
 
+<!-- SCROLL TO TOP -->
+<button class="stt" id="sttBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 
 <script>
 // Mobile hamburger menu
@@ -1226,6 +1236,17 @@ function updatePricing() {
 if (billingToggle) {
   billingToggle.addEventListener('click', () => { isYearly = !isYearly; updatePricing(); });
   billingToggle.addEventListener('keydown', e => { if(e.key===' '||e.key==='Enter'){e.preventDefault();isYearly=!isYearly;updatePricing();} });
+}
+
+// Scroll to top
+const sttBtn = document.getElementById('sttBtn');
+const heroSection = document.querySelector('.hero');
+if(sttBtn && heroSection){
+  const observer = new IntersectionObserver(([entry]) => {
+    sttBtn.classList.toggle('visible', !entry.isIntersecting);
+  }, {threshold: 0});
+  observer.observe(heroSection);
+  sttBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
 }
 
 // Sticky header shadow
