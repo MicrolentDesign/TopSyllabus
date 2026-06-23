@@ -212,7 +212,7 @@ a{text-decoration:none}
 .plat-r1{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
 .plat-r2{display:flex;gap:24px;justify-content:center;margin-top:24px}
 .plat-r2 .pc{width:calc(25% - 18px);max-width:420px;flex-shrink:0}
-.pc{border-radius:24px;overflow:hidden;background:rgba(248,248,246,.7);backdrop-filter:blur(4px);box-shadow:var(--card-shadow);transition:all .25s;display:flex;flex-direction:column}
+.pc{border-radius:24px;overflow:hidden;background:rgba(248,248,246,.96);backdrop-filter:blur(4px);box-shadow:var(--card-shadow);transition:all .25s;display:flex;flex-direction:column}
 .pc:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px rgb(200,212,232),0px 56px 36px rgba(0,0,0,.03),0px 26px 26px rgba(0,0,0,.06),0px 10px 16px rgba(0,0,0,.06)}
 .pc-img{height:200px;overflow:hidden;flex-shrink:0}
 .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
@@ -220,8 +220,8 @@ a{text-decoration:none}
 .pc-bd{padding:20px;background:rgb(248,248,246);flex:1;display:flex;flex-direction:column}
 .pc-pill{display:inline-block;background:#fff;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:700;letter-spacing:.06em;color:#0E78E9;margin-bottom:10px;align-self:flex-start}
 .pc-pill.soon{color:rgb(100,116,139)}
-.pc h3{font-size:22px;font-weight:500;color:rgb(15,23,42);margin-bottom:8px;letter-spacing:-.003em;line-height:1.3}
-.pc p{font-size:15px;color:var(--muted);line-height:1.55;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.pc h3{font-size:22px;font-weight:500;color:#1D1D20;margin-bottom:8px;letter-spacing:-.003em;line-height:1.3}
+.pc p{font-size:15px;color:#1D1D20;line-height:1.55;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 
 /* ── PRICING ── */
 .pricing{background:rgb(27,61,139);padding:clamp(52px,8vw,100px) clamp(16px,6vw,80px);position:relative;overflow:hidden}
@@ -409,6 +409,7 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
 @media (max-width:860px){
   /* Header */
   .hdr{padding:0 24px;height:70px}
+  .hdr-logo img{height:34px}
   .hdr-nav{display:none}
   .hdr-btns{display:none}
   .hdr-burger{display:flex}
@@ -484,17 +485,18 @@ footer{background:linear-gradient(135deg,rgb(69,112,210) 0%,rgb(42,76,170) 100%)
 @media (max-width:580px){
   /* Header */
   .hdr{padding:0 16px;height:64px}
+  .hdr-logo img{height:30px}
 
   /* Hero — top half image + play, bottom half white text */
   .hero{height:auto;min-height:calc(100svh - 64px);flex-direction:column;align-items:stretch;overflow-x:clip;overflow-y:visible}
   /* Photo: normal flow, takes top 50% */
-  .hero-photo{position:relative;top:auto;left:auto;right:auto;bottom:auto;width:100%;height:auto;aspect-ratio:16/9;max-height:50svh;flex-shrink:0;transform:none;background-position:center;}
-  /* Kill the desktop left-side gradient veil */
-  .hero-veil{background:linear-gradient(2deg,#fff 49%,transparent);width:100%;top:min(calc(56.25vw - 80px),calc(50svh - 80px));height:100px;}
+  .hero-photo{position:relative;top:auto;left:auto;right:auto;bottom:auto;width:100%;height:auto;flex:1 1 0;min-height:180px;flex-shrink:unset;transform:none;background:linear-gradient(to bottom,transparent 45%,#fff 96%),url('components/assets/fcfb090e9a3b5174.png') center/cover no-repeat;}
+  /* veil repurposed as gradient is now baked into hero-photo */
+  .hero-veil{display:none;}
   .hero-glo{display:none}
   .hero-glb{display:none}
   /* Inner: takes bottom 50%, solid white, vertically centered */
-  .hero-inner{position:relative;z-index:2;background:#fff;padding:20px 20px 28px;max-width:100%;width:100%;flex:1;display:flex;flex-direction:column;}
+  .hero-inner{position:relative;z-index:2;background:#fff;padding:20px 20px 28px;max-width:100%;width:100%;flex:0 0 auto;display:flex;flex-direction:column;}
   .hero-inner h1{font-size:28px;letter-spacing:-.3px;color:#000;margin-bottom:12px}
   .hero-inner p{font-size:14px;margin-bottom:20px;max-width:100%}
   .hero-ctas{flex-direction:column;gap:10px}
